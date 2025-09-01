@@ -17,6 +17,15 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "next/navigation": "next/dist/client/components/navigation", 
+    },
+  },
+   optimizeDeps: {
+    include: ["@vercel/analytics"],
+  },
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/],
     },
   },
 }));
