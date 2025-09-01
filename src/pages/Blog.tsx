@@ -7,10 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import petInsuranceImage from "@/assets/pet-insurance.jpg";
-import dogFoodImage from "@/assets/dog-food-review.jpg";
-import catBehaviorImage from "@/assets/cat-behavior.jpg";
+import Footer from "@/components/Footer"; 
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -26,9 +23,10 @@ const Blog = () => {
       publishDate: "2024-01-15",
       category: "Insurance",
       rating: 4.9,
-      image: petInsuranceImage,
-      trending: true,
-      featured: true,
+      image: '/pet-insurance.jpg',
+  trending: false,
+      featured: false,
+      slug: "complete-guide-to-pet-insurance",
     },
     {
       id: 2,
@@ -39,9 +37,10 @@ const Blog = () => {
       publishDate: "2024-01-12",
       category: "Reviews",
       rating: 4.8,
-      image: dogFoodImage,
-      trending: true,
-      featured: true,
+      image: './dog-food-review.jpg',
+trending: false,
+      featured: false,
+      slug: "ultimate-dog-food-review",
     },
     {
       id: 3,
@@ -52,9 +51,10 @@ const Blog = () => {
       publishDate: "2024-01-10",
       category: "Behavior",
       rating: 4.7,
-      image: catBehaviorImage,
+      image: '/cat-behavior.jpg',
       trending: false,
       featured: false,
+      slug: "cat-behavior-decoded-strange-behaviors",
     },
     {
       id: 4,
@@ -65,9 +65,10 @@ const Blog = () => {
       publishDate: "2024-01-08",
       category: "Training",
       rating: 4.9,
-      image: "/api/placeholder/400/250",
+      image: "/puppy.png",
       trending: false,
       featured: false,
+      slug: 'week-by-week-guide-for-new-owners'
     },
     {
       id: 5,
@@ -78,9 +79,10 @@ const Blog = () => {
       publishDate: "2024-01-05",
       category: "Health",
       rating: 4.8,
-      image: "/api/placeholder/400/250",
+      image: "/emergency.png",
       trending: false,
       featured: false,
+      slug: 'emergency-pet-first-aid'
     },
     {
       id: 6,
@@ -91,9 +93,175 @@ const Blog = () => {
       publishDate: "2024-01-03",
       category: "Reviews",
       rating: 4.6,
-      image: "/api/placeholder/400/250",
+      image: "/cat-sitter.png",
       trending: false,
       featured: false,
+      slug: 'best-cat-litter-2024-complete-buying-guide'
+    },
+     {
+      id: 7,
+      title: "Golden Retriever Complete Care Guide: Everything You Need to Know",
+      description: "A comprehensive guide covering health, training, grooming, and nutrition for Golden Retrievers",
+      author: "Dr. Sarah Johnson, DVM",
+      readTime: "15 min read",
+      rating: 4.9,
+      category: "Breed Guide",
+      image: "/golden.png",
+      slug: 'golden-retriever-care'
+    },
+    {
+      id: 8,
+      title: "Puppy Training Basics: The First 8 Weeks at Home",
+      description: "Essential training techniques every new puppy owner needs to know",
+      author: "Mark Thompson, Dog Trainer",
+      readTime: "12 min read",
+      rating: 4.8,
+      category: "Training",
+      image: "/training.png",
+            slug: 'puppy-training-basics'
+    },
+    {
+      id: 9,
+      title: "Dog Food Allergies: Signs, Causes, and Solutions",
+      description: "How to identify and manage food allergies in dogs with expert veterinary advice",
+      author: "Dr. Michael Chen, DVM",
+      readTime: "10 min read",
+      rating: 4.9,
+      category: "Health",
+      image: "/allergies.png",
+            slug: 'dog-food-allergies'
+    },
+      {
+      id: 10,
+      title: "Maine Coon Complete Care Guide: The Gentle Giant",
+      description: "Everything you need to know about caring for Maine Coons, from grooming to health maintenance",
+      author: "Dr. Emily Rodriguez, DVM",
+      readTime: "18 min read",
+      rating: 4.9,
+      category: "Breed Guide",
+      image: "/maine.png",
+       slug: "maine-coon-complete-care"
+    },
+    {
+      id: 11,
+      title: "Litter Box Training: Solutions for Common Problems",
+      description: "Expert strategies for successful litter training and solving elimination issues",
+      author: "Sarah Mitchell, Feline Behaviorist",
+      readTime: "14 min read",
+      rating: 4.8,
+      category: "Behavior",
+      image: "/litter.png",
+     slug: "litter-box-training-solutions"
+    },
+    {
+      id: 12,
+      title: "Indoor Cat Enrichment: Creating a Stimulating Environment",
+      description: "How to keep indoor cats mentally and physically active with environmental enrichment",
+      author: "Dr. James Parker, DVM",
+      readTime: "11 min read",
+      rating: 4.9,
+      category: "Wellness",
+      image: "/indoor.png",
+      slug: "indoor-cat-enrichment"
+    },
+     {
+      id: 13,
+      title: "Holland Lop Rabbit Care: Your Complete Guide",
+      description: "Everything you need to know about caring for Holland Lop rabbits, from diet to grooming",
+      author: "Dr. Amanda Foster, Exotic Vet",
+      readTime: "16 min read",
+      rating: 4.9,
+      category: "Rabbits",
+      image: "/rabbit.png",
+       slug: 'holland-lop-rabbit-care'
+    },
+    {
+      id: 14,
+      title: "Syrian Hamster Setup: Creating the Perfect Habitat",
+      description: "Step-by-step guide to setting up a proper enclosure for Syrian hamsters",
+      author: "Lisa Chen, Small Animal Specialist",
+      readTime: "12 min read",
+      rating: 4.8,
+      category: "Habitat",
+      image: "/hamster.png",
+       slug: 'syrian-hamster-setup'
+    },
+    {
+      id: 15,
+      title: "Budgie Health Signs: When to See an Avian Vet",
+      description: "Learn to recognize early health warning signs in budgerigars and other small birds",
+      author: "Dr. Robert Kim, Avian Veterinarian",
+      readTime: "10 min read",
+      rating: 4.9,
+      category: "Birds",
+      image: "/budgie.png",
+       slug: 'budgie-health-signs'
+    },
+    {
+      id: 16,
+      title: "Vaccination Schedule Guide: Protecting Your Pet's Health",
+      description: "Complete vaccination timelines for dogs, cats, and other pets with expert veterinary recommendations",
+      author: "Dr. Maria Santos, DVM",
+      readTime: "20 min read",
+      rating: 4.9,
+      category: "Preventive Care",
+      image: "/vaccination.png",
+       slug: 'vaccination-schedule-guide'
+    },
+    {
+      id: 17,
+      title: "Pet Emergency First Aid: Essential Skills Every Owner Should Know",
+      description: "Life-saving techniques for common pet emergencies, from choking to heatstroke",
+      author: "Dr. Kevin Wright, Emergency Vet",
+      readTime: "15 min read",
+      rating: 4.8,
+      category: "Emergency Care",
+      image: "/pet-emergency.png",
+       slug: 'pet-emergency-first-aid'
+    },
+    {
+      id: 18,
+      title: "Arthritis in Pets: Early Detection and Management",
+      description: "How to recognize signs of arthritis and provide effective pain management for aging pets",
+      author: "Dr. Jennifer Liu, Veterinary Orthopedist",
+      readTime: "13 min read",
+      rating: 4.9,
+      category: "Senior Care",
+      image: "/arthritis.png",
+       slug: 'arthritis-in-pets'
+    },
+    {
+      id: 19,
+      title: "House Training Your Puppy: A Complete 8-Week Program",
+      description: "Step-by-step house training guide with realistic timelines and troubleshooting tips",
+      author: "Sarah Martinez, Certified Dog Trainer",
+      readTime: "22 min read",
+      rating: 4.9,
+      category: "Basic Training",
+      image: "/puppy-training.png",
+       slug: 'house-training-your-puppy-8-week-program'
+    },
+    {
+      id: 20,
+      title: "Separation Anxiety in Dogs: Training Solutions That Work",
+      description: "Evidence-based techniques to help dogs overcome separation anxiety and stress",
+      author: "Dr. Michael Thompson, Animal Behaviorist",
+      readTime: "18 min read",
+      rating: 4.8,
+      category: "Behavior Issues",
+      image: "/anxiety.png",
+       slug: 'separation-anxiety-in-dogs-training-solutions'
+    },
+    {
+      id: 21,
+      title: "Clicker Training Basics: Positive Reinforcement for All Pets",
+      description: "Learn the fundamentals of clicker training for dogs, cats, birds, and small animals",
+      author: "Jennifer Wu, KPA-CTP Trainer",
+      readTime: "14 min read",
+      rating: 4.9,
+      category: "Training Methods",
+      image: "/clicker.png",
+       slug: 'clicker-training-basics-positive-reinforcement'
     },
   ];
 
@@ -106,12 +274,28 @@ const Blog = () => {
     { value: "Behavior", label: "Pet Behavior" },
   ];
 
-  const filteredArticles = articles.filter((article) => {
-    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         article.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === "all" || article.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+const filteredArticles = articles.filter((article) => {
+  const queryWords = searchQuery.toLowerCase().split(" ");
+
+  const text = (
+    article.title +
+    " " +
+    article.description +
+    " " +
+    article.author +
+    " " +
+    article.category
+  ).toLowerCase();
+
+  const matchesSearch = queryWords.every((word) => text.includes(word));
+
+  const matchesCategory =
+    selectedCategory === "all" || article.category === selectedCategory;
+
+  return matchesSearch && matchesCategory;
+});
+
+
 
   const featuredArticles = articles.filter(article => article.featured);
   const regularArticles = filteredArticles.filter(article => !article.featured);
@@ -169,12 +353,13 @@ const Blog = () => {
         <section className="py-16 subtle-gradient">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-secondary text-center mb-12">
-              Featured Articles
+               Articles
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               {featuredArticles.map((article) => (
                 <Card key={article.id} className="shadow-medium hover:shadow-strong transition-smooth group cursor-pointer">
+                   <a href={`/article/${article.slug}`} rel="noopener noreferrer">
                   <div className="relative">
                     <img
                       src={article.image}
@@ -222,7 +407,7 @@ const Blog = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
+                </a></Card>
               ))}
             </div>
           </div>
@@ -239,7 +424,8 @@ const Blog = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                <div className="relative">
+                  <a href={`/article/${article.slug}`} rel="noopener noreferrer">
+                  <div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -279,13 +465,17 @@ const Blog = () => {
                       <Clock className="w-4 h-4 mr-1" />
                       {article.readTime}
                     </div>
-                  </div>
-                  <Button variant="ghost" size="sm" className="text-primary mt-3 p-0">
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  </div> 
+    ...
+    <Button variant="ghost" size="sm" className="text-primary mt-3 p-0" asChild>
+      <a href={`/article/${article.slug}`} rel="noopener noreferrer">
+      Read More
+      <ArrowRight className="w-4 h-4 ml-1" />
+      </a>
+    </Button> 
+
                 </CardContent>
-              </Card>
+            </a>   </Card>
             ))}
           </div>
 

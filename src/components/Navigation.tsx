@@ -12,8 +12,7 @@ const Navigation = () => {
   const navItems = [
     { name: "Dogs", href: "/dogs", description: "Breeds, care & training" },
     { name: "Cats", href: "/cats", description: "Health, behavior & grooming" },
-    { name: "Small Pets", href: "/small-pets", description: "Rabbits, hamsters & birds" },
-    { name: "Reviews", href: "/reviews", description: "Product reviews & comparisons" },
+    { name: "Small Pets", href: "/small-pets", description: "Rabbits, hamsters & birds" }, 
     { name: "Health", href: "/health", description: "Veterinary advice & wellness" },
     { name: "Training", href: "/training", description: "Behavior & training guides" },
     { name: "Blog", href: "/blog", description: "Latest pet news & tips" },
@@ -31,7 +30,7 @@ const Navigation = () => {
             <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
-            <div className="hidden sm:block">
+            <div>
               <span className="text-2xl font-bold text-secondary">Pawsome</span>
               <span className="text-2xl font-bold text-primary">Pets</span>
             </div>
@@ -59,7 +58,7 @@ const Navigation = () => {
           </div>
 
           {/* Search Bar */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* <div className="hidden md:flex items-center space-x-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
               <Input
@@ -70,7 +69,7 @@ const Navigation = () => {
                 className="pl-10 w-64 focus:ring-primary focus:border-primary"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <Button
@@ -87,8 +86,9 @@ const Navigation = () => {
         {isOpen && (
           <div className="lg:hidden py-4 border-t border-border bg-white">
             <div className="flex flex-col space-y-4">
+              
               {/* Mobile Search */}
-              <div className="relative px-4">
+              {/* <div className="relative px-4">
                 <Search className="absolute left-7 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
                 <Input
                   type="search"
@@ -97,7 +97,7 @@ const Navigation = () => {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-10 focus:ring-primary focus:border-primary"
                 />
-              </div>
+              </div> */}
 
               {/* Mobile Navigation Links */}
               {navItems.map((item) => (

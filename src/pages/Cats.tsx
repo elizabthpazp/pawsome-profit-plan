@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, Star, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,30 +5,30 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const Dogs = () => {
-  const dogCategories = [
+const Cats = () => {
+  const catCategories = [
     {
-      title: "Dog Breeds",
-      description: "Complete breed guides with care requirements, temperament, and health information",
-      articles: 45,
+      title: "Cat Breeds",
+      description: "Comprehensive breed profiles with personality traits, care needs, and health information",
+      articles: 52,
       color: "bg-primary/10",
     },
     {
-      title: "Training & Behavior",
-      description: "Expert training techniques and behavior modification strategies",
-      articles: 38,
+      title: "Behavior & Training",
+      description: "Understanding feline behavior and positive reinforcement training techniques",
+      articles: 41,
       color: "bg-accent/10",
     },
     {
-      title: "Health & Wellness",
-      description: "Veterinary health guides, preventive care, and common health issues",
-      articles: 42,
+      title: "Health & Veterinary Care",
+      description: "Preventive healthcare, common conditions, and wellness guidelines for cats",
+      articles: 48,
       color: "bg-secondary/10",
     },
     {
-      title: "Nutrition & Diet",
-      description: "Dog food reviews, feeding guides, and nutritional requirements",
-      articles: 35,
+      title: "Nutrition & Feeding",
+      description: "Cat food guides, feeding schedules, and dietary requirements by life stage",
+      articles: 39,
       color: "bg-primary/10",
     },
   ];
@@ -37,36 +36,36 @@ const Dogs = () => {
   const featuredArticles = [
     {
       id: 1,
-      title: "Golden Retriever Complete Care Guide: Everything You Need to Know",
-      description: "A comprehensive guide covering health, training, grooming, and nutrition for Golden Retrievers",
-      author: "Dr. Sarah Johnson, DVM",
-      readTime: "15 min read",
+      title: "Maine Coon Complete Care Guide: The Gentle Giant",
+      description: "Everything you need to know about caring for Maine Coons, from grooming to health maintenance",
+      author: "Dr. Emily Rodriguez, DVM",
+      readTime: "18 min read",
       rating: 4.9,
       category: "Breed Guide",
-      image: "/golden.png",
-      slug: 'golden-retriever-care'
+      image: "/maine.png",
+       slug: "maine-coon-complete-care"
     },
     {
       id: 2,
-      title: "Puppy Training Basics: The First 8 Weeks at Home",
-      description: "Essential training techniques every new puppy owner needs to know",
-      author: "Mark Thompson, Dog Trainer",
-      readTime: "12 min read",
+      title: "Litter Box Training: Solutions for Common Problems",
+      description: "Expert strategies for successful litter training and solving elimination issues",
+      author: "Sarah Mitchell, Feline Behaviorist",
+      readTime: "14 min read",
       rating: 4.8,
-      category: "Training",
-      image: "/training.png",
-            slug: 'puppy-training-basics'
+      category: "Behavior",
+      image: "/litter.png",
+     slug: "litter-box-training-solutions"
     },
     {
       id: 3,
-      title: "Dog Food Allergies: Signs, Causes, and Solutions",
-      description: "How to identify and manage food allergies in dogs with expert veterinary advice",
-      author: "Dr. Michael Chen, DVM",
-      readTime: "10 min read",
+      title: "Indoor Cat Enrichment: Creating a Stimulating Environment",
+      description: "How to keep indoor cats mentally and physically active with environmental enrichment",
+      author: "Dr. James Parker, DVM",
+      readTime: "11 min read",
       rating: 4.9,
-      category: "Health",
-      image: "/allergies.png",
-            slug: 'dog-food-allergies'
+      category: "Wellness",
+      image: "/indoor.png",
+      slug: "indoor-cat-enrichment"
     },
   ];
 
@@ -78,16 +77,16 @@ const Dogs = () => {
       <section className="py-16 trust-gradient text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-6xl mb-6">🐕</div>
+            <div className="text-6xl mb-6">🐱</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Complete Dog Care Guides
+              Complete Cat Care Guides
             </h1>
             <p className="text-xl text-white/90 mb-8">
-              Expert advice on dog breeds, training, health, and nutrition from certified veterinarians and professional dog trainers
+              Expert advice on cat breeds, behavior, health, and nutrition from certified veterinarians and feline specialists
             </p>
             <Button variant="hero" size="lg" asChild>
-               <a href={`#dogs-section`} rel="noopener noreferrer"> 
-              Explore Dog Guides
+               <a href={`#cats-section`} rel="noopener noreferrer"> 
+              Explore Cat Guides
               <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
@@ -99,11 +98,11 @@ const Dogs = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary text-center mb-12">
-            Dog Care Categories
+            Cat Care Categories
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dogCategories.map((category) => (
+            {catCategories.map((category) => (
               <Card key={category.title} className={`${category.color} border-0 shadow-soft hover:shadow-medium transition-smooth cursor-pointer group`}>
                 <CardHeader>
                   <CardTitle className="text-lg text-secondary group-hover:text-primary transition-smooth">
@@ -123,17 +122,16 @@ const Dogs = () => {
       </section>
 
       {/* Featured Articles */}
-      <section id="dogs-section" className="py-16 subtle-gradient">
+      <section id="cats-section" className="py-16 subtle-gradient">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary text-center mb-12">
-             Dog Care Articles
+             Cat Care Articles
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                  <a href={`/article/${article.slug}`} rel="noopener noreferrer">
-                <div className="relative">
+                 <a href={`/article/${article.slug}`} rel="noopener noreferrer">  <div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -196,4 +194,4 @@ const Dogs = () => {
   );
 };
 
-export default Dogs;
+export default Cats;

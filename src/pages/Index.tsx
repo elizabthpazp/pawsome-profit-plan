@@ -4,40 +4,51 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import heroImage from "@/assets/hero-pets.jpg";
+import Footer from "@/components/Footer"; 
 
 const Index = () => {
   const featuredArticles = [
-    {
+     {
       id: 1,
       title: "Complete Guide to Pet Insurance: 2024 Comparison & Reviews",
-      description: "Everything you need to know about choosing the right pet insurance for your furry friend",
-      category: "Insurance",
-      readTime: "12 min read",
+      description: "Everything you need to know about choosing the right pet insurance for your furry friend. Compare top providers, coverage options, and costs.",
       author: "Dr. Sarah Johnson, DVM",
-      image: "/api/placeholder/400/250",
-      trending: true,
+      readTime: "12 min read",
+      publishDate: "2024-01-15",
+      category: "Insurance",
+      rating: 4.9,
+      image: '/pet-insurance.jpg',
+  trending: false,
+      featured: false,
+      slug: "complete-guide-to-pet-insurance",
     },
     {
       id: 2,
       title: "The Ultimate Dog Food Review: 25 Brands Tested by Veterinarians",
-      description: "Our comprehensive analysis of the best dog foods for every life stage and budget",
-      category: "Reviews",
-      readTime: "15 min read",
+      description: "Our comprehensive analysis of the best dog foods for every life stage and budget. Nutritional breakdowns and expert recommendations included.",
       author: "Pet Nutrition Team",
-      image: "/api/placeholder/400/250",
-      trending: true,
+      readTime: "15 min read",
+      publishDate: "2024-01-12",
+      category: "Reviews",
+      rating: 4.8,
+      image: './dog-food-review.jpg',
+trending: false,
+      featured: false,
+      slug: "ultimate-dog-food-review",
     },
-    {
+     {
       id: 3,
       title: "Cat Behavior Decoded: 15 Strange Behaviors Explained",
-      description: "Understanding your cat's mysterious behaviors and what they really mean",
-      category: "Behavior",
-      readTime: "8 min read",
+      description: "Understanding your cat's mysterious behaviors and what they really mean. Expert insights into feline psychology and communication.",
       author: "Dr. Michael Chen, DVM",
-      image: "/api/placeholder/400/250",
+      readTime: "8 min read",
+      publishDate: "2024-01-10",
+      category: "Behavior",
+      rating: 4.7,
+      image: '/cat-behavior.jpg',
       trending: false,
+      featured: false,
+      slug: "cat-behavior-decoded-strange-behaviors",
     },
   ];
 
@@ -67,11 +78,11 @@ const Index = () => {
       color: "bg-secondary/10 hover:bg-secondary/20",
     },
     {
-      name: "Reviews",
-      href: "/reviews",
+      name: "Training",
+      href: "/training",
       icon: "⭐",
-      description: "Honest reviews of pet food, toys, accessories, and health products",
-      count: "200+ reviews",
+      description: "Essential commands, house training, and foundational behaviors for all pets",
+      count: "200+ trainings",
       color: "bg-primary/10 hover:bg-primary/20",
     },
   ];
@@ -91,7 +102,7 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={heroImage}
+            src={'/hero-pets.jpg'}
             alt="Happy pets - dog, cat, and rabbit together"
             className="w-full h-full object-cover"
           />
@@ -116,13 +127,17 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg">
-                Explore Pet Guides
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Button variant="hero" size="lg" className="text-lg" asChild>
+                <a href="/blog" rel="noopener noreferrer">
+                 Explore Pet Guides
+                 <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
               </Button>
-              <Button variant="secondary" size="lg" className="text-lg">
+              <Button variant="secondary" size="lg" className="text-lg" asChild>
+               <a href="/health" rel="noopener noreferrer">
+                 Find Pet Insurance 
                 <Shield className="w-5 h-5 mr-2" />
-                Find Pet Insurance
+               </a> 
               </Button>
             </div>
           </div>
@@ -161,7 +176,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                <div className="relative">
+                <a href={`/article/${article.slug}`} rel="noopener noreferrer"><div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -197,7 +212,7 @@ const Index = () => {
                     </Button>
                   </div>
                 </CardContent>
-              </Card>
+           </a>   </Card>
             ))}
           </div>
 

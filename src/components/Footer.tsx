@@ -18,18 +18,15 @@ const Footer = () => {
     },
     {
       title: "Resources",
-      links: [
-        { name: "Product Reviews", href: "/reviews" },
-        { name: "Training Guides", href: "/training" },
-        { name: "Emergency Care", href: "/health/emergency" },
-        { name: "Pet Insurance", href: "/insurance" },
+      links: [ 
+        { name: "Training Guides", href: "/training" }, 
+        { name: "Pet Insurance", href: "/health" },
       ],
     },
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "/about" },
-        { name: "Contact", href: "/contact" },
+        { name: "About Us", href: "/about" }, 
         { name: "Privacy Policy", href: "/privacy" },
         { name: "Terms of Service", href: "/terms" },
       ],
@@ -93,7 +90,8 @@ const Footer = () => {
                 and honest product reviews for dogs, cats, and small animals.
               </p>
               <div className="flex space-x-4">
-                {socialLinks.map(({ name, icon: Icon, href }) => (
+                Contact to: catewebs@yahoo.com
+                {/* {socialLinks.map(({ name, icon: Icon, href }) => (
                   <a
                     key={name}
                     href={href}
@@ -103,7 +101,7 @@ const Footer = () => {
                   >
                     <Icon className="w-5 h-5 text-secondary-foreground group-hover:text-white transition-smooth" />
                   </a>
-                ))}
+                ))} */}
               </div>
             </div>
 
@@ -134,7 +132,7 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-secondary-foreground/60 text-sm">
-              © {currentYear} PawsomePets.com. All rights reserved.
+              © {currentYear} PawsomePets. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link
@@ -149,12 +147,12 @@ const Footer = () => {
               >
                 Terms of Service
               </Link>
-              <Link
+              {/* <Link
                 to="/cookies"
                 className="text-secondary-foreground/60 hover:text-primary transition-smooth"
               >
                 Cookie Policy
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

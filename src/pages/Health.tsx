@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, Star, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -6,30 +5,30 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const Dogs = () => {
-  const dogCategories = [
+const Health = () => {
+  const healthCategories = [
     {
-      title: "Dog Breeds",
-      description: "Complete breed guides with care requirements, temperament, and health information",
-      articles: 45,
+      title: "Preventive Care",
+      description: "Vaccination schedules, regular checkups, and preventive treatments for all pets",
+      articles: 44,
       color: "bg-primary/10",
     },
     {
-      title: "Training & Behavior",
-      description: "Expert training techniques and behavior modification strategies",
-      articles: 38,
+      title: "Emergency Care",
+      description: "First aid techniques, emergency situations, and when to seek immediate veterinary help",
+      articles: 36,
       color: "bg-accent/10",
     },
     {
-      title: "Health & Wellness",
-      description: "Veterinary health guides, preventive care, and common health issues",
-      articles: 42,
+      title: "Common Conditions",
+      description: "Recognition, treatment, and management of frequent health issues in pets",
+      articles: 52,
       color: "bg-secondary/10",
     },
     {
-      title: "Nutrition & Diet",
-      description: "Dog food reviews, feeding guides, and nutritional requirements",
-      articles: 35,
+      title: "Senior Pet Care",
+      description: "Age-related health concerns and specialized care for aging pets",
+      articles: 29,
       color: "bg-primary/10",
     },
   ];
@@ -37,57 +36,56 @@ const Dogs = () => {
   const featuredArticles = [
     {
       id: 1,
-      title: "Golden Retriever Complete Care Guide: Everything You Need to Know",
-      description: "A comprehensive guide covering health, training, grooming, and nutrition for Golden Retrievers",
-      author: "Dr. Sarah Johnson, DVM",
-      readTime: "15 min read",
+      title: "Vaccination Schedule Guide: Protecting Your Pet's Health",
+      description: "Complete vaccination timelines for dogs, cats, and other pets with expert veterinary recommendations",
+      author: "Dr. Maria Santos, DVM",
+      readTime: "20 min read",
       rating: 4.9,
-      category: "Breed Guide",
-      image: "/golden.png",
-      slug: 'golden-retriever-care'
+      category: "Preventive Care",
+      image: "/vaccination.png",
+       slug: 'vaccination-schedule-guide'
     },
     {
       id: 2,
-      title: "Puppy Training Basics: The First 8 Weeks at Home",
-      description: "Essential training techniques every new puppy owner needs to know",
-      author: "Mark Thompson, Dog Trainer",
-      readTime: "12 min read",
+      title: "Pet Emergency First Aid: Essential Skills Every Owner Should Know",
+      description: "Life-saving techniques for common pet emergencies, from choking to heatstroke",
+      author: "Dr. Kevin Wright, Emergency Vet",
+      readTime: "15 min read",
       rating: 4.8,
-      category: "Training",
-      image: "/training.png",
-            slug: 'puppy-training-basics'
+      category: "Emergency Care",
+      image: "/pet-emergency.png",
+       slug: 'pet-emergency-first-aid'
     },
     {
       id: 3,
-      title: "Dog Food Allergies: Signs, Causes, and Solutions",
-      description: "How to identify and manage food allergies in dogs with expert veterinary advice",
-      author: "Dr. Michael Chen, DVM",
-      readTime: "10 min read",
+      title: "Arthritis in Pets: Early Detection and Management",
+      description: "How to recognize signs of arthritis and provide effective pain management for aging pets",
+      author: "Dr. Jennifer Liu, Veterinary Orthopedist",
+      readTime: "13 min read",
       rating: 4.9,
-      category: "Health",
-      image: "/allergies.png",
-            slug: 'dog-food-allergies'
+      category: "Senior Care",
+      image: "/arthritis.png",
+       slug: 'arthritis-in-pets'
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
+       <Navigation />
       {/* Hero Section */}
       <section className="py-16 trust-gradient text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="text-6xl mb-6">🐕</div>
+            <div className="text-6xl mb-6">🏥</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Complete Dog Care Guides
+              Complete Pet Health Guides
             </h1>
             <p className="text-xl text-white/90 mb-8">
-              Expert advice on dog breeds, training, health, and nutrition from certified veterinarians and professional dog trainers
+              Comprehensive health information from licensed veterinarians covering preventive care, emergency treatment, and wellness for all pets
             </p>
             <Button variant="hero" size="lg" asChild>
-               <a href={`#dogs-section`} rel="noopener noreferrer"> 
-              Explore Dog Guides
+               <a href={`#health-section`} rel="noopener noreferrer"> 
+              Explore Health Guides
               <ArrowRight className="w-5 h-5 ml-2" />
               </a>
             </Button>
@@ -99,11 +97,11 @@ const Dogs = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary text-center mb-12">
-            Dog Care Categories
+            Pet Health Categories
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {dogCategories.map((category) => (
+            {healthCategories.map((category) => (
               <Card key={category.title} className={`${category.color} border-0 shadow-soft hover:shadow-medium transition-smooth cursor-pointer group`}>
                 <CardHeader>
                   <CardTitle className="text-lg text-secondary group-hover:text-primary transition-smooth">
@@ -123,17 +121,16 @@ const Dogs = () => {
       </section>
 
       {/* Featured Articles */}
-      <section id="dogs-section" className="py-16 subtle-gradient">
+      <section id="health-section" className="py-16 subtle-gradient">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-secondary text-center mb-12">
-             Dog Care Articles
+             Health Articles
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                  <a href={`/article/${article.slug}`} rel="noopener noreferrer">
-                <div className="relative">
+                 <a href={`/article/${article.slug}`} rel="noopener noreferrer"> <div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -190,10 +187,9 @@ const Dogs = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
+<Footer />
     </div>
   );
 };
 
-export default Dogs;
+export default Health;
