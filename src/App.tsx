@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import About from "./pages/about";
+import { Analytics } from "@vercel/analytics/next"
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <Analytics/>
   </QueryClientProvider>
 );
 
