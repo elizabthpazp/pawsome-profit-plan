@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Heart, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import  SubscribeForm  from "@/components/SubscribeForm";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -43,32 +44,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground">
       {/* Newsletter Section */}
-      <div className="bg-primary py-12">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Get Weekly Pet Care Tips & Exclusive Reviews
-            </h3>
-            <p className="text-primary-foreground/80 mb-6 text-lg">
-              Join 50,000+ pet parents who trust our expert advice
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="bg-white text-foreground border-0 focus:ring-2 focus:ring-white"
-              />
-              <Button variant="secondary" className="whitespace-nowrap font-semibold">
-                <Mail className="w-4 h-4 mr-2" />
-                Subscribe Free
-              </Button>
-            </div>
-            <p className="text-xs text-primary-foreground/60 mt-3">
-              Unsubscribe anytime. We respect your privacy.
-            </p>
-          </div>
-        </div>
-      </div>
+     <SubscribeForm />
 
       {/* Main Footer Content */}
       <div className="py-12">
@@ -157,7 +133,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+ </footer>
   );
 };
 
