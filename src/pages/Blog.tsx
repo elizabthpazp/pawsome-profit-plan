@@ -359,7 +359,7 @@ const filteredArticles = articles.filter((article) => {
             <div className="grid md:grid-cols-2 gap-8">
               {featuredArticles.map((article) => (
                 <Card key={article.id} className="shadow-medium hover:shadow-strong transition-smooth group cursor-pointer">
-                   <a href={`/article/${article.slug}`} rel="noopener noreferrer">
+                    <Link to={`/article/${article.slug}`}>
                   <div className="relative">
                     <img
                       src={article.image}
@@ -407,7 +407,7 @@ const filteredArticles = articles.filter((article) => {
                       </div>
                     </div>
                   </CardContent>
-                </a></Card>
+                </Link>  </Card>
               ))}
             </div>
           </div>
@@ -424,7 +424,7 @@ const filteredArticles = articles.filter((article) => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regularArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                  <a href={`/article/${article.slug}`} rel="noopener noreferrer">
+                <Link to={`/article/${article.slug}`}>
                   <div className="relative">
                   <img
                     src={article.image}
@@ -468,14 +468,14 @@ const filteredArticles = articles.filter((article) => {
                   </div> 
     ...
     <Button variant="ghost" size="sm" className="text-primary mt-3 p-0" asChild>
-      <a href={`/article/${article.slug}`} rel="noopener noreferrer">
+      <Link to={`/article/${article.slug}`}>
       Read More
       <ArrowRight className="w-4 h-4 ml-1" />
-      </a>
+      </Link>
     </Button> 
 
                 </CardContent>
-            </a>   </Card>
+            </Link>    </Card>
             ))}
           </div>
 

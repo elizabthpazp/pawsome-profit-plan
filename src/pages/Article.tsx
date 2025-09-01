@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const BlogArticle = () => {
   const { slug } = useParams();
@@ -124,10 +124,10 @@ useEffect(() => {
             Sorry, we couldn't find the article you're looking for.
           </p>
           <Button asChild>
-            <a href="/blog">
+           <Link to="/blog">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
-            </a>
+            </Link>
           </Button>
         </div>
         <Footer />

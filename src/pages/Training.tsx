@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const Training = () => {
   const trainingCategories = [
@@ -130,7 +131,7 @@ const Training = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                <a href={`/article/${article.slug}`} rel="noopener noreferrer">  <div className="relative">
+                <Link to={`/article/${article.slug}`}>  <div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -172,17 +173,17 @@ const Training = () => {
                     </Button>
                   </div>
                 </CardContent>
-                </a>
+                </Link>
               </Card>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Button variant="outline" size="lg" asChild> 
-              <a href={`/blog`} rel="noopener noreferrer">
+              <Link to="/blog">
               View All Articles
               <ArrowRight className="w-5 h-5 ml-2" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

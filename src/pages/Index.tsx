@@ -128,16 +128,16 @@ trending: false,
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" className="text-lg" asChild>
-                <a href="/blog" rel="noopener noreferrer">
+                   <Link to="/blog">
                  Explore Pet Guides
                  <ArrowRight className="w-5 h-5 ml-2" />
-                </a>
+                </Link>
               </Button>
               <Button variant="secondary" size="lg" className="text-lg" asChild>
-               <a href="/health" rel="noopener noreferrer">
+              <Link to="/health">
                  Find Pet Insurance 
                 <Shield className="w-5 h-5 mr-2" />
-               </a> 
+              </Link>  
               </Button>
             </div>
           </div>
@@ -176,7 +176,7 @@ trending: false,
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredArticles.map((article) => (
               <Card key={article.id} className="shadow-soft hover:shadow-medium transition-smooth group cursor-pointer">
-                <a href={`/article/${article.slug}`} rel="noopener noreferrer"><div className="relative">
+                <Link to={`/article/${article.slug}`}><div className="relative">
                   <img
                     src={article.image}
                     alt={article.title}
@@ -212,7 +212,7 @@ trending: false,
                     </Button>
                   </div>
                 </CardContent>
-           </a>   </Card>
+           </Link>   </Card>
             ))}
           </div>
 
