@@ -15,7 +15,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import About from "./pages/about"; 
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 const queryClient = new QueryClient();
 
@@ -38,9 +38,9 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/article/:slug" element={<Article />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-          <Analytics/>
+          <Route path="*" element={<NotFound />} /> 
         </Routes>
+        <Analytics/>
       </BrowserRouter>
     </TooltipProvider> 
   </QueryClientProvider>
