@@ -166,8 +166,10 @@ useEffect(() => {
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-4">
           <Button variant="ghost" className="text-primary">
+              <Link to="/blog">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Articles
+            </Link>
           </Button>
         </div>
       </div>
