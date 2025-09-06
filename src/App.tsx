@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import About from "./pages/about"; 
+import { Analytics } from "@vercel/analytics/next"
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/article/:slug" element={<Article />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
+          <Analytics/>
         </Routes>
       </BrowserRouter>
     </TooltipProvider> 
